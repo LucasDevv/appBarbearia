@@ -67,7 +67,6 @@ const AppointmentForm: React.FC<Props> = ({ visible, onDismiss, onSave, appointm
   };
 
   const handleConfirmDate = (date: Date) => {
-    // Formatar a data como DD/MM/AAAA
     const formattedDate = date.toLocaleDateString('pt-BR');
     setAppointmentDate(formattedDate);
     hideDatePicker();
@@ -101,7 +100,7 @@ const AppointmentForm: React.FC<Props> = ({ visible, onDismiss, onSave, appointm
                         {...props}
                         value={phoneNumber}
                         onChangeText={(masked) => {
-                        setPhoneNumber(masked); // Você pode optar por armazenar o valor mascarado ou não
+                        setPhoneNumber(masked);
                         }}
                         mask={Masks.BRL_PHONE}
                     />

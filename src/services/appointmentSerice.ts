@@ -1,5 +1,3 @@
-// src/services/appointmentService.ts
-
 import { db } from '../config/firebaseConfig';
 import {
   collection,
@@ -8,8 +6,6 @@ import {
   updateDoc,
   deleteDoc,
   doc,
-  onSnapshot,
-  QuerySnapshot,
 } from 'firebase/firestore';
 import { Appointment } from '../models/Appointment';
 
