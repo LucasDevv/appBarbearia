@@ -2,12 +2,12 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAiuxmKja2WiUSZZ8LZx46aKapeZ5LAmuM",
-  authDomain: "appbarbearia-adbc6.firebaseapp.com",
-  projectId: "appbarbearia-adbc6",
-  storageBucket: "appbarbearia-adbc6.firebasestorage.app",
-  messagingSenderId: "799277707282",
-  appId: "1:799277707282:web:def6560879440aa72368cb"
+  apiKey: "AIzaSyBhlUavaS6kMcuceE7ZMZJsgvhcwTn0gcs",
+  authDomain: "appbarbearia-a5f60.firebaseapp.com",
+  projectId: "appbarbearia-a5f60",
+  storageBucket: "appbarbearia-a5f60.firebasestorage.app",
+  messagingSenderId: "1096811207787",
+  appId: "1:1096811207787:web:cd30b8c408d0150306652e"
 };
 
 // Inicializar o Firebase
