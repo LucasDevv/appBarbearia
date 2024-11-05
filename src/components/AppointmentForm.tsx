@@ -76,9 +76,11 @@ const AppointmentForm: React.FC<Props> = ({ visible, onDismiss, onSave, appointm
   return (
     <Portal>
       <Modal visible={visible} onDismiss={onDismiss} contentContainerStyle={[styles.modal, { backgroundColor: theme.colors.background }]}>
-        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        >
           <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-            <ScrollView>
+            <ScrollView >
               <View style={styles.header}>
                 <Text style={styles.title}>Novo Cliente</Text>
                 <IconButton icon="close" onPress={onDismiss} style={styles.closeButton} />
@@ -160,7 +162,7 @@ const styles = StyleSheet.create({
   input: { marginBottom: 10 },
   saveButton: { marginTop: 20 , borderRadius: 8},
   header: {flexDirection: 'row', alignItems:'center', justifyContent: 'space-between'},
-  title: {fontSize: 18}
+  title: {fontSize: 18},
 });
 
 export default AppointmentForm;

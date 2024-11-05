@@ -44,6 +44,9 @@ const HomeScreen = () => {
       const appointmentsData: Appointment[]  = await getAppointments();
       if(appointmentsData.length > 0)
         setAppointments(appointmentsData);
+      else{
+        setAppointments([]);
+      }
     } catch (error) {
       setSnackbarMessage('Erro ao obter agendamentos: ' + error);
       setSnackbarVisible(true);
@@ -54,6 +57,7 @@ const HomeScreen = () => {
 
   const handleSave = async (appointment: Appointment) => {
     try {
+      setIsloading(true);
       if (appointment.id) {
         await updateAppointment(appointment);
       } else {
@@ -64,6 +68,8 @@ const HomeScreen = () => {
     } catch (error) {
       setSnackbarMessage('Erro ao salvar agendamento: ' + error);
       setSnackbarVisible(true);
+    } finally{
+      setIsloading(false);
     }
   };
 
