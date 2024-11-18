@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, ScrollView, View, KeyboardAvoidingView, TouchableWithoutFeedback, Platform, Keyboard } from 'react-native';
+import { StyleSheet, ScrollView, View, KeyboardAvoidingView, TouchableWithoutFeedback, Platform, Keyboard, TouchableOpacity } from 'react-native';
 import { Modal, Portal, TextInput, Button, IconButton, useTheme, Text, Snackbar } from 'react-native-paper';
 import { Appointment } from '../models/Appointment';
 import MaskInput, { Masks } from 'react-native-mask-input';
@@ -109,14 +109,15 @@ const AppointmentForm: React.FC<Props> = ({ visible, onDismiss, onSave, appointm
                 keyboardType="phone-pad"
                 style={styles.input}
               />
-              <TextInput
-                readOnly={true}
-                mode="outlined"
-                label="Data do Agendamento"
-                value={appointmentDate}
-                onTouchStart={showDatePicker}
-                style={styles.input}
-              />
+              <TouchableOpacity onPress={showDatePicker} activeOpacity={0.8}>
+                <TextInput
+                  readOnly={true}
+                  mode="outlined"
+                  label="Data do Agendamento"
+                  value={appointmentDate}
+                  style={styles.input}
+                />
+              </TouchableOpacity>
               <DateTimePickerModal
                 isVisible={isDatePickerVisible}
                 mode="date"
